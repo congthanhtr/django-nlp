@@ -1,0 +1,10 @@
+<form method="POST" name='english'>
+    {% csrf_token %}
+    <p>input text here to parse: </p>
+    <input type="text" name='text'>
+    <input type="submit">
+</form>
+TREEE:
+{% for iob in tree %}}
+<p>{{iob}}</p>>
+{% endfor %}

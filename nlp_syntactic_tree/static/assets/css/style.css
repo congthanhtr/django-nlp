@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ html {
+    font-family:Arial, Helvetica, sans-serif;
+ }
+
+.dp-none {
+    display: none;
+}
+
+ .header-logo {
+    padding: 15px;
+    height: 90px;
+    width: 100%;
+ }
+
+ .header-content {
+     padding-top: 30px;
+     font-weight: 700;
+     color: #4F091D;
+ }
+
+ .header {
+     background-color: #F5EEDC;
+     box-shadow: 0px 10px rgba(79, 9, 29, 0.1);
+ }
+
+ .header-link {
+    margin-top: 30px;
+    color: #4F091D;
+    font-size: 20px;
+ }
+
+ .header .content-link {
+    color: #4F091D;
+ }
+
+ .header-link:hover {
+     opacity: 0.7;
+ }
+
+ #result,
+ #content {
+     margin: 30px;
+     background-color: #97BFB4;
+ }
+
+ .mt-28 {
+     margin-top: 28px;
+ }
+
+ #content .exampleList {
+    list-style-type:none;
+ }
+
+ .exampleList .exampleItem {
+     font-size: 20px;
+     margin-bottom: 10px;
+     margin-left: 20px;
+     color: #F5EEDC
+ }
+
+ #content .btn-form {
+     background-color: #4F091D;
+     height:50px;
+     width: 120px;
+     font-size: 20px;
+     color: #F5EEDC;
+     border-radius: 8px;
+     border: none;
+ }
+
+ #content .btn-clear {
+    background-color: #DD4A48;
+    height:50px;
+    width: 180px;
+    font-size: 20px;
+    color: #F5EEDC;
+    border-radius: 8px;
+    border: none;
+ }
+
+ #content .btn-clear:hover,
+ #content .btn-form:hover {
+     opacity: 0.8;
+ }
+
+ #result .box-result {
+    border: solid lightgray 1px;
+    position: relative;
+    text-size-adjust: 100%;
+ }
+
+ #result .btn-delete {
+    float: right;
+ }
+
+ .jss392 {
+    overflow: scroll;
+    position: relative;
+ }
+
+ .jss393 {
+    display: inline-block;
+    padding: 16px;
+    position: relative;
+    padding-top: 28px;
+ }
+
+ .jss393 > .jss395 {
+    padding-top: 0;
+}
+
+.jss395:last-child {
+    padding-right: 0;
+}
+
+.jss395:first-child {
+    padding-left: 0;
+}
+
+.jss395 {
+    padding: 0.5em;
+    padding-bottom: 0;
+}
+
+.jss396 {
+    font-size: 0.875em;
+}
+
+.MuiTypography-noWrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.MuiTypography-alignCenter {
+    text-align: center;
+}
+
+.MuiTypography-body1 {
+    font-size: 20px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.MuiTypography-root {
+    margin: 0;
+}
+
+.jss446 {
+    background-color: #f9fbe7;
+}
+
+
+.jss398 {
+    border: solid lightgray 1px;
+    padding: 0.5em;
+    font-size: 1em;
+    transition: background-color 0.25s, border-color 0.25s;
+    border-radius: 0.25em;
+}
+
+.jss474 {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.jss431 {
+    background-color: #f3e5f5;
+}
+
+.jss437 {
+    background-color: #eceff1;
+}
+
+.jss462 {
+    background-color: #e1f5fe;
+}
+
+.jss461 {
+    background-color: #e8eaf6;
+}
+
+.jss458 {
+    background-color: #fbe9e7;
+}
+
+.jss427 {
+    background-color: #f1f8e9;
+}
+
+.jss405 {
+    background-color: #ede7f6;
+}
