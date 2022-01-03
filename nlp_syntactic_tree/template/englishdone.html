@@ -1,5 +1,7 @@
 TREEE:
 {% for iob in tree %}
-<p>{{iob}}</p>
+    {% for ele in iob %}
+        <p>{{ele}} </p>
+    {% endfor %}
 {% endfor %}
 <!-- {{tree.draw}} -->

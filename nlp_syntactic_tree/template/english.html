@@ -5,6 +5,8 @@
     <input type="submit">
 </form>
 TREEE:
-{% for iob in tree %}}
-<p>{{iob}}</p>>
+{% for iob in tree %}
+    {% for ele in iob %}
+        <p>{{ele}}</p>
+    {% endfor %}
 {% endfor %}
