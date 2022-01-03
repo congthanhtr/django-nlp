@@ -31,48 +31,11 @@ def creat_corpus(corpus_line):
 
     return corpus
 
-# def conll_tag_chunks(chunk_data):
-      
-#     # tagged_data = [tree2conlltags(tree) for 
-#     #                 tree in chunk_data]
-      
-#     return [[(t, c) for (w, t, c) in sent] 
-#             for sent in chunk_data]
-      
-# class TagChunker(ChunkParserI):
-      
-#     def __init__(self, train_chunks, 
-#                  tagger_classes =[UnigramTagger, BigramTagger]):
-          
-#         train_data = conll_tag_chunks(train_chunks)
-#         self.tagger = backoff_tagger(train_data, tagger_classes)
-          
-#     def parse(self, tagged_sent):
-#         if not tagged_sent: 
-#             return None
-          
-#         (words, tags) = zip(*tagged_sent)
-#         chunks = self.tagger.tag(tags)
-#         wtc = zip(words, chunks)
-          
-#         return conlltags2tree([(w, t, c) for (w, (t, c)) in wtc])
-
 corpus = creat_corpus(read_file('./model/vietnamese/corpus_chunk.txt'))
 cuttof = int(len(corpus) * 0.8)
 traindata = corpus[:cuttof]
 testdata  = corpus[cuttof:]
 
-# chunker = TagChunker(traindata, tagger_classes=[UnigramTagger])
-# score = chunker.evaluate(testdata)
-
-
-# a = score.accuracy()
-# p = score.precision()
-# r = recall
-  
-# print ("Accuracy of TagChunker : ", a)
-# print ("\nPrecision of TagChunker : ", p)
-# print ("\nRecall of TagChunker : ", r)
 
 nltk.download('conll2000')
 shuffled_conll_sents = list(conll2000.chunked_sents())

@@ -5,7 +5,7 @@ from nltk.chunk import ChunkParserI
 from nltk.chunk import tree2conlltags,conlltags2tree
 from nltk import pos_tag, word_tokenize
 
-text = "She enjoys playing tennis."
+text = "Maybe i'm a little stuffy, but i wouldn't sell them, sniffs Bob Machon , owner of Papa 's Sports Cards inMenlo Park, Calif."
 def load_model(path_name):
     f = open(path_name, 'rb')
     tagger = pickle.load(f)
@@ -44,14 +44,12 @@ class PostagChunkParser(ChunkParserI):
 
         # Transform the list of triplets to nltk.Tree format (Convert the CoNLL IOB format to a tree.)
         return conlltags2tree(iob_triplets)
-        # return iob_triplets
 
-
-# model_pos='pos_trained.pkl'
-# model_chunk='chunk_trained.pkl'
+# model_pos='./model/english/pos_trained.pkl'
+# model_chunk='./model/english/chunk_trained.pkl'
 
 
 # chunker=PostagChunkParser(model_chunk,model_pos)
 # result= chunker.parse(text)
 # print(result)
-# #result.draw()
+# result.draw()

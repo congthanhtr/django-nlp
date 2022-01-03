@@ -18,13 +18,10 @@ def backoff_tagger(tagged_sents, tagger_classes, backoff=None):
     print("check:\n",backoff)
     return backoff
 
-# # nltk.download('brown')
-# # corpus = [_ for _ in brown.tagged_sents()]  # 5734
-# # print(corpus[0])
 def read_file(filename):
     corpus_line = ""
 
-    with open(filename) as file:
+    with open(filename, encoding='utf-8') as file:
         for line in file:
             corpus_line = corpus_line + line
     file.close()
@@ -40,15 +37,8 @@ def creat_corpus(corpus_line):
             tuple = (w[0], w[1])
             sentence.append(tuple)
         corpus.append(sentence)
-        # print(word)
-        # w = word.split('/')
-        # # print(w)
-        # # tuple = (w[0], w[1])
-        # # corpus.append(tuple)
     return corpus
 
-# print(creat_corpus(read_file('cor')))
-# print(creat_corpus(read_file('corpus.txt')))
 corpus = creat_corpus(read_file('./model/vietnamese/corpus_pos.txt'))
 cuttof = int(len(corpus) * 0.9)
 train_data = corpus[:cuttof]

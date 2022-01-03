@@ -6,7 +6,7 @@ from nltk.chunk import tree2conlltags,conlltags2tree
 from nltk import pos_tag
 from underthesea import word_tokenize
 
-text = "Anh ta chơi đá bóng khá hay"
+text = "Anh ta là một học sinh giỏi"
 def load_model(path_name):
     f = open(path_name, 'rb')
     tagger = pickle.load(f)
@@ -47,10 +47,10 @@ class VNPostagChunkParser(ChunkParserI):
         return conlltags2tree(iob_triplets)
 
 
-# model_pos='./model/vietnamese/pos_trained.pkl'
-# model_chunk='./model/vietnamese/hunker_trained.pkl'
+model_pos='./model/vietnamese/pos_trained.pkl'
+model_chunk='./model/vietnamese/chunker_trained.pkl'
 
-# chunker=VNPostagChunkParser(model_chunk,model_pos)
-# result= chunker.parse(text)
-# print(result)
-# result.draw()
+chunker=VNPostagChunkParser(model_chunk,model_pos)
+result= chunker.parse(text)
+print(result)
+result.draw()
