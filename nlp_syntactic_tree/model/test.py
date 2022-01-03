@@ -45,11 +45,11 @@ class PostagChunkParser(ChunkParserI):
         # Transform the list of triplets to nltk.Tree format (Convert the CoNLL IOB format to a tree.)
         return conlltags2tree(iob_triplets)
 
-# model_pos='./model/english/pos_trained.pkl'
-# model_chunk='./model/english/chunk_trained.pkl'
+model_pos='./model/english/pos_trained.pkl'
+model_chunk='./model/english/chunk_trained.pkl'
 
 
-# chunker=PostagChunkParser(model_chunk,model_pos)
-# result= chunker.parse(text)
+chunker=PostagChunkParser(model_chunk,model_pos)
+result= chunker.parse(text)
 # print(result)
 # result.draw()

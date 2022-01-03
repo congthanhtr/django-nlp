@@ -19,9 +19,7 @@ def vietnamese(request):
     if request.method == 'POST':
         input_text = request.POST['text']
         # chunker=PostagChunkParser(model_chunk,model_pos)
-        print(input_text)
-        print(chunker.parse(input_text))
-        return render(request, 'vietnamesedone.html', {'tree':chunker.parse(input_text)})
+        return render(request, 'vietnamesedone.html', {'tree':chunker.parse(input_text), 'sentence': input_text})
 
     return render(request, 'vietnamese.html', {'tree':chunker.parse('')})
 
@@ -34,8 +32,6 @@ def english(request):
     if request.method == 'POST':
         input_text = request.POST['text']
         # chunker=PostagChunkParser(model_chunk,model_pos)
-        print(input_text)
-        print(chunker.parse(input_text))
-        return render(request, 'englishdone.html', {'tree':chunker.parse(input_text)})
+        return render(request, 'englishdone.html', {'tree':chunker.parse(input_text), 'sentence': input_text})
 
     return render(request, 'english.html', {'tree':chunker.parse('')})

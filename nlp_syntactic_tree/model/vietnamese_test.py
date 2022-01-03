@@ -52,5 +52,5 @@ model_chunk='./model/vietnamese/chunker_trained.pkl'
 
 chunker=VNPostagChunkParser(model_chunk,model_pos)
 result= chunker.parse(text)
-print(result)
-result.draw()
+# print(result)
+# result.draw()

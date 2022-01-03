@@ -4,177 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     {% load static %}
     <link rel="stylesheet" href="{% static '/assets/css/style.css' %}">
-    <title>NLP Syntactic Tree</title>
+    <title>Trang chủ</title>
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="row header">
-            <div class="col-1">
-                <img src="{% static '/assets/image/Logo.png' %}" alt="logo" class="header-logo">
+    <div class="home">
+        <div class="container text-center box-content">
+            <div class="row ">
+                <h1>CÂY PHÂN TÍCH CÚ PHÁP</h1>
+                <h1>(SYNTATIC TREE)</h1>
             </div>
-            <div class="col-9">
-                <div><h1 class="header-content">NLP Syntactic Tree</h1></div>
+            <div class="row ">
+                <p><i>Chọn ngôn ngữ của bạn (Choose your language)</i></p>
             </div>
-            <div class="col-2">
-                <div class="header-link"><a href="https://github.com/congthanhtr/NLP_syntactic_tree" class="content-link">Github</a></div>
-            </div>
-        </div>
-    </header>
-
-    <div id="content">
-
-        <div class="container">
-
-            <div class="row">
-                <h3 class="mt-28">Parser Demo</h3>
-                <p style="font-size: 20px;">Enter a sentence to be parsed, or try one of our examples:</p>
-                <ul class="exampleList">
-                    <li> <a class="btn btn-primary exampleItem">She enjoys playing tennis.</a></li>
-                    <li> <a class="btn btn-primary exampleItem">"A journey of a thousand miles begins with a single step," said Lao Tzu.</a></li>
-                    <li> <a class="btn btn-primary exampleItem">Ngày hôm nay của bạn như thế nào.</a></li>
-                    <li> <a class="btn btn-primary exampleItem">Sài Gòn là thành phố thức về đêm.</a></li>
-                </ul>
-                <div class="row mb-3">
-                    <form method="POST" name='english'>
-                        {% csrf_token %}
-                        <div class="input-group input-group-lg mb-4 mt-5">
-                            <span class="input-group-text">Input</span>
-                            <input type="text" class="form-control input-sentence" placeholder="Enter a sentence English or Vietnamese to parsed..." name="text">
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-form">PARSE</button>
-                        <button class="btn btn-primary btn-clear ms-5">CLEAR RESULTS</button>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div id="result">
-        <div class="container result-item">
-
-            <div class="row">
-                <div class="col-11">
-
-                    <h3 class="mt-28">Sentence:</h3>
-                    <p style="font-size: 20px;">She enjoys playing tennis.</p>
-                </div>
-                <div class="col-1">
-                    <button type="button" class="btn btn-secondary btn-delete mt-28">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"></path>
-                            <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            <div class="row">
-                <h3>Parse Tree:</h3>
-                <div class="box-result mb-3">
-                    
-                    <div class="jss392">
-                        <div class="jss393">
-                            <div class="jss395">
-
-                                <div>
-                                    <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss625" title="Sentence or clause">S</span></p>
-                                </div>
-                                <p class="MuiTypography-root jss398 jss446 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">She enjoys playing tennis.</p>
-                                <div class="jss474">
-                                    <div class="jss395">
-                                         <div>
-                                            <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss625" title="Noun phrase">NP</span></p>
-                                        </div>
-                                        <p class="MuiTypography-root jss398 jss431 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">She</p>
-                                        <div class="jss474">
-                                            <div class="jss395">
-                                                <div>
-                                                    <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss625" title="Personal pronoun">PRP</span></p>
-                                                </div>
-                                                <p class="MuiTypography-root jss398 jss437 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">She</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jss395">
-                                        <div>
-                                            <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397" title="Verb phrase">VP</span></p>
-                                        </div>
-                                        <p class="MuiTypography-root jss398 jss462 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">enjoys playing tennis</p>
-                                        <div class="jss474">
-                                            <div class="jss395">
-                                                <div><p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397">VBZ</span></p>
-                                                </div>
-                                                <p class="MuiTypography-root jss398 jss461 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">enjoys</p>
-                                            </div>
-                                            <div class="jss395">
-                                                <div>
-                                                    <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397" title="Sentence or clause">S</span></p>
-                                                </div>
-                                                <p class="MuiTypography-root jss398 jss446 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">playing tennis</p>
-                                                <div class="jss474">
-                                                    <div class="jss395">
-                                                        <div>
-                                                            <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397">VP</span></p>
-                                                        </div>
-                                                        <p class="MuiTypography-root jss398 jss462 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">playing tennis</p>
-                                                        <div class="jss474">
-                                                            <div class="jss395">
-                                                                <div>
-                                                                    <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397" title="Verb, gerund or present participle">VBG</span></p>
-                                                                </div>
-                                                                <p class="MuiTypography-root jss398 jss458 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">playing</p>
-                                                            </div>
-                                                            <div class="jss395">
-                                                                <div>
-                                                                    <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397">NP</span></p>
-                                                                </div>
-                                                                <p class="MuiTypography-root jss398 jss431 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">tennis</p>
-                                                                <div class="jss474">
-                                                                    <div class="jss395">
-                                                                        <div>
-                                                                            <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397" title="Noun, singular or mass">NN</span></p>
-                                                                        </div>
-                                                                        <p class="MuiTypography-root jss398 jss427 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">tennis</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    <div class="jss395">
-                                        <div>
-                                            <p class="MuiTypography-root jss396 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter"><span class="jss397" title="Punctuation mark, sentence closer">.</span></p>
-                                        </div>
-                                        <p class="MuiTypography-root jss398 jss405 MuiTypography-body1 MuiTypography-noWrap MuiTypography-alignCenter">.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+            <div class="row mt-5">
+                <div class="col-md-6"><a type="button" class="btn btn-success btn-lg mt-1" href="/vietnamese">Việt Nam</a></div>
+                <div class="col-md-6"><a type="button" class="btn btn-primary btn-lg mt-1" href="/english">English</a></div>
             </div>
         </div>
     </div>
-    <!-- Bootrap 5 js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" 
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="{% static '/assets/js/index.js' %}"></script>
 </body>
 </html>
