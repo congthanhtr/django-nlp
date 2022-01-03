@@ -43,10 +43,11 @@
                     <li> <a class="btn btn-primary exampleItem">Sài Gòn là thành phố thức về đêm.</a></li>
                 </ul>
                 <div class="row mb-3">
-                    <form>
+                    <form method="POST" name='english'>
+                        {% csrf_token %}
                         <div class="input-group input-group-lg mb-4 mt-5">
                             <span class="input-group-text">Input</span>
-                            <input type="text" class="form-control input-sentence" placeholder="Enter a sentence English or Vietnamese to parsed...">
+                            <input type="text" class="form-control input-sentence" placeholder="Enter a sentence English or Vietnamese to parsed..." name="text">
                         </div>
                         <button type="submit" class="btn btn-primary btn-form">PARSE</button>
                         <button class="btn btn-primary btn-clear ms-5">CLEAR RESULTS</button>

@@ -17,12 +17,12 @@ btnDelete.onclick = function(e) {
     result.classList.add('dp-none');
 }
 
-btnParse.onclick= function(e) {
-    e.preventDefault();
-    if(result.classList.contains('dp-none')) {
-        result.classList.remove('dp-none');
-    };
-}
+// btnParse.onclick= function(e) {
+//     e.preventDefault();
+//     if(result.classList.contains('dp-none')) {
+//         result.classList.remove('dp-none');
+//     };
+// }
 
 btnDeleteAll.onclick = function(e) {
     e.preventDefault();
