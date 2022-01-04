@@ -13,7 +13,7 @@ def index(request):
 def vietnamese(request):
     model_pos='./model/vietnamese/pos_trained.pkl'
     model_chunk='./model/vietnamese/chunker_trained.pkl'
-    chunker=PostagChunkParser(model_chunk,model_pos)
+    chunker=VNPostagChunkParser(model_chunk,model_pos)
     #print(chunker.parse(input_text))
 
     if request.method == 'POST':
