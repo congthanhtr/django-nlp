@@ -32,17 +32,9 @@ def creat_corpus(corpus_line):
     return corpus
 
 corpus = creat_corpus(read_file('./model/vietnamese/corpus_chunk.txt'))
-cuttof = int(len(corpus) * 0.8)
+cuttof = int(len(corpus) * 0.9)
 traindata = corpus[:cuttof]
 testdata  = corpus[cuttof:]
-
-
-nltk.download('conll2000')
-shuffled_conll_sents = list(conll2000.chunked_sents())
-random.shuffle(shuffled_conll_sents)
-
-train_sents = shuffled_conll_sents[:int(len(shuffled_conll_sents) * 0.9)]
-test_sents = shuffled_conll_sents[int(len(shuffled_conll_sents) * 0.9 + 1):]
 
 test_data = [
     [(s[1], s[2]) for s in sent]
@@ -52,9 +44,6 @@ test_data = [
 train_data = [
     [(s[1], s[2]) for s in sent]
     for sent in traindata]
-print(train_data[0].__format__)
-print('own train')
-print(traindata[0].__format__)
 
 t1 = UnigramTagger(train_data)
 t2 = BigramTagger(train_data, backoff=t1)
