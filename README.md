@@ -24,3 +24,5 @@ In this project, we, contributors, are making a website to parse a sentence in E
 3. Open cmd at: .../nlp_syntactic_tree/ and run command :`python manage.py runserver`
 4. Ctrl + click to follow link or open your web browser and start the server at: http://127.0.0.1:8000/
 5. Test our website
+## Referenec
+Vietnamese training corpus source: https://github.com/lupanh/vTools/tree/master/data
